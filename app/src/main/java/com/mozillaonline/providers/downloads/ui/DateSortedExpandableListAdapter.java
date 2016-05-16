@@ -30,7 +30,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.mozillaonline.providers.DownloadManager;
-import potato.demo.R;
+import potato.driver.R;
 
 import java.util.Vector;
 

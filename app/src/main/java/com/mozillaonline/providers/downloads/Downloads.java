@@ -19,39 +19,13 @@ package com.mozillaonline.providers.downloads;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-
 /**
  * The Download Manager
  *
  * @pending
  */
 public final class Downloads implements BaseColumns {
-    protected static String packageName = "potato.demo";
-
-    static {
-
-        InputStream inputStream = Downloads.class.getClassLoader().getResourceAsStream("assets/packagename_for_provider");
-        ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024];
-        int len = -1;
-        try {
-            while ((len = inputStream.read(buffer)) != -1) {
-                outSteam.write(buffer, 0, len);
-            }
-            outSteam.close();
-            inputStream.close();
-            byte[] bts = outSteam.toByteArray();
-            packageName = new String(bts, "utf-8");
-        } catch (Exception e) {
-            packageName = packageName;
-        } finally {
-            outSteam = null;
-            inputStream = null;
-        }
-
-    }
+    protected static String packageName = "potato.driver";
 
     /**
      * DownloadProvider authority

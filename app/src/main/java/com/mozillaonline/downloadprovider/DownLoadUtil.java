@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Environment;
 
 import com.mozillaonline.providers.DownloadManager;
-import potato.demo.chips.app.MainApplication;
+import potato.driver.chips.app.MainApplication;
 
 /**
  * Created by ztw on 2015/12/25.

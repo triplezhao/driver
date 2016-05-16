@@ -36,7 +36,7 @@ import android.widget.TextView;
 
 import com.mozillaonline.providers.DownloadManager;
 import com.mozillaonline.providers.downloads.ui.DownloadItem.DownloadSelectListener;
-import potato.demo.R;
+import potato.driver.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;

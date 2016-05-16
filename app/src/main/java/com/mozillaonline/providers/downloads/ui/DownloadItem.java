@@ -22,7 +22,7 @@ import android.view.MotionEvent;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 
-import potato.demo.R;
+import potato.driver.R;
 
 
 /**

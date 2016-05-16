@@ -28,7 +28,7 @@ import android.widget.RemoteViews;
 import java.util.Collection;
 import java.util.HashMap;
 
-import potato.demo.R;
+import potato.driver.R;
 
 /**
  * This class handles the updating of the Notification Manager for the
