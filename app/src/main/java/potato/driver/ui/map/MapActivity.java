@@ -80,7 +80,7 @@ public class MapActivity extends BaseActivity implements LocationSource,
         // 自定义系统定位小蓝点
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         myLocationStyle.myLocationIcon(BitmapDescriptorFactory
-                .fromResource(R.drawable.location_icon));// 设置小蓝点的图标
+                .fromResource(R.drawable.car_y));// 设置小蓝点的图标
         myLocationStyle.strokeColor(Color.BLACK);// 设置圆形的边框颜色
         myLocationStyle.radiusFillColor(Color.argb(100, 0, 0, 180));// 设置圆形的填充颜色
         // myLocationStyle.anchor(int,int)//设置小蓝点的锚点
@@ -173,7 +173,7 @@ public class MapActivity extends BaseActivity implements LocationSource,
 
             @Override
             public void onSuccess(int statusCode, String content) {
-                L.d("统计坐标信息成功，" + content);
+                L.d("上传统计坐标信息成功，" + content);
             }
 
             @Override
