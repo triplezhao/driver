@@ -123,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void doLogin(String email, String password) {
         RequestWraper requestWraper = DriverRequestBuilder.login(email, password);
-        RequestManager.requestData(requestWraper, new RequestManager.DataLoadListener() {
+        RequestManager.requestData(requestWraper, RequestManager.CACHE_TYPE_NOCACHE, new RequestManager.DataLoadListener() {
             @Override
             public void onCacheLoaded(String content) {
 
@@ -151,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
             }
-        }, RequestManager.CACHE_TYPE_NOCACHE);
+        });
     }
 
     private boolean isEmailValid(String email) {

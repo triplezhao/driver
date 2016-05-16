@@ -35,20 +35,23 @@ public class DriverRequestBuilder extends BaseRequestBuilder {
         return req;
     }
 
-    public static RequestWraper loction(String latitude, String longitude) {
+    public static RequestWraper location(String login_id, String latitude, String longitude) {
         RequestWraper req = new DefaultRequest();
         req.url = DriverRequestUrls.login;
         req.reqMethod = RequestWraper.REQ_METHOD_GET;
         req.params = new HashMap<String, Object>();
         addParam(req.params, "g", "v1");
         addParam(req.params, "c", "user");
-        addParam(req.params, "a", "loction");
+        addParam(req.params, "a", "location");
 
         if (!TextUtils.isEmpty(latitude)) {
             addParam(req.params, "latitude", latitude);
         }
         if (!TextUtils.isEmpty(longitude)) {
             addParam(req.params, "longitude", longitude);
+        }
+        if (!TextUtils.isEmpty(login_id)) {
+            addParam(req.params, "login_id", login_id);
         }
 
         return req;

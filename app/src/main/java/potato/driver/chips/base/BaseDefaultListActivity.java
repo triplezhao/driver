@@ -201,8 +201,7 @@ public abstract class BaseDefaultListActivity extends BaseActivity implements Po
         };
         RequestManager.requestData(
                 getRefreshRequest(),
-                dataLoadListener,
-                RequestManager.CACHE_TYPE_NOCACHE
+                RequestManager.CACHE_TYPE_NOCACHE, dataLoadListener
         );
     }
 
@@ -231,8 +230,7 @@ public abstract class BaseDefaultListActivity extends BaseActivity implements Po
         };
         RequestManager.requestData(
                 getLoadMoreRequest(),
-                dataLoadListener,
-                RequestManager.CACHE_TYPE_NOCACHE
+                RequestManager.CACHE_TYPE_NOCACHE, dataLoadListener
         );
     }
 }

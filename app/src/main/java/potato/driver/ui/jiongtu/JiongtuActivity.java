@@ -57,7 +57,7 @@ public class JiongtuActivity extends BaseActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         RequestWraper request = JiongtuRequestBuilder.getSectionListRequest();
-        RequestManager.requestData(request, new RequestManager.DataLoadListener() {
+        RequestManager.requestData(request, RequestManager.CACHE_TYPE_IGNORE_TIME, new RequestManager.DataLoadListener() {
             @Override
             public void onCacheLoaded(String content) {
                 updateUI(content);
@@ -72,7 +72,7 @@ public class JiongtuActivity extends BaseActivity {
             public void onFailure(Throwable error, String errMsg) {
                 L.i(TAG,errMsg+"");
             }
-        }, RequestManager.CACHE_TYPE_IGNORE_TIME);
+        });
 
     }
 

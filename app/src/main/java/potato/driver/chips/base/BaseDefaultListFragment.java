@@ -193,8 +193,7 @@ public abstract class BaseDefaultListFragment extends BaseFragment implements Vi
         };
         RequestManager.requestData(
                 getRefreshRequest(),
-                dataLoadListener,
-                RequestManager.CACHE_TYPE_NORMAL
+                RequestManager.CACHE_TYPE_NORMAL, dataLoadListener
         );
     }
 
@@ -223,8 +222,7 @@ public abstract class BaseDefaultListFragment extends BaseFragment implements Vi
         };
         RequestManager.requestData(
                 getLoadMoreRequest(),
-                dataLoadListener,
-                RequestManager.CACHE_TYPE_NOCACHE
+                RequestManager.CACHE_TYPE_NOCACHE, dataLoadListener
         );
     }
 

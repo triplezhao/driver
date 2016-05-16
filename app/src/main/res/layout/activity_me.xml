@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="个人中心"
+            android:textColor="@color/potato_white"
             android:textSize="@dimen/txt_maxx" />
 
     </RelativeLayout>
@@ -30,9 +31,9 @@
             android:id="@+id/ll_logined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical"
             android:paddingTop="100dp"
-            android:gravity="center"
             android:visibility="gone">
 
             <com.makeramen.roundedimageview.RoundedImageView
@@ -41,20 +42,21 @@
                 android:layout_height="80dp"
                 android:scaleType="fitXY"
                 app:riv_border_color="#333333"
-                app:riv_corner_radius="5dip" />
+                app:riv_corner_radius="40dip" />
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="name"/>
+                android:textSize="@dimen/txt_max"
+                android:text="name" />
 
             <Button
                 android:id="@+id/bt_logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_bg_red"
                 android:layout_marginTop="100dp"
+                android:background="@drawable/selector_bg_red"
                 android:paddingLeft="30dip"
                 android:paddingRight="30dip"
                 android:text="退出登录"

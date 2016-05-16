@@ -87,7 +87,7 @@ public class JiongTuDetailActivity extends BaseActivity {
         if (!TextUtils.isEmpty(mAlbumId)) {// 来自囧图图册列表
             RequestWraper request = JiongtuRequestBuilder.getPhotoListRequest(mAlbumId);
             RequestManager.requestData(request,
-                    new RequestManager.DataLoadListener() {
+                    RequestManager.CACHE_TYPE_NORMAL, new RequestManager.DataLoadListener() {
                         @Override
                         public void onSuccess(int statusCode, String content) {
                             onRefreshSucc(content);
@@ -101,7 +101,7 @@ public class JiongTuDetailActivity extends BaseActivity {
                         public void onCacheLoaded(String content) {
                             onRefreshSucc(content);
                         }
-                    }, RequestManager.CACHE_TYPE_NORMAL);// 使用缓存
+                    });// 使用缓存
         }
     }
 

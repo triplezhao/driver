@@ -4,13 +4,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedImageView;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import potato.driver.R;
 import potato.driver.chips.base.BaseActivity;
 import potato.driver.chips.common.PageCtrl;
+import potato.driver.chips.util.ImageLoaderUtil;
 import potato.driver.data.db.DriverBeanDao;
+import potato.driver.ui.map.MapActivity;
 
 public class MeActivity extends BaseActivity {
 
@@ -26,6 +30,8 @@ public class MeActivity extends BaseActivity {
 
     @InjectView(R.id.tv_name)
     TextView tv_name;
+    @InjectView(R.id.avatar)
+    RoundedImageView avatar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,7 @@ public class MeActivity extends BaseActivity {
             ll_unlogin.setVisibility(View.GONE);
 
             tv_name.setText(new DriverBeanDao(getApplication()).getLoginedDiver().getUsername());
+            ImageLoaderUtil.displayImage("", avatar, R.drawable.user_default);
 
         } else {
             ll_logined.setVisibility(View.GONE);
@@ -65,6 +72,7 @@ public class MeActivity extends BaseActivity {
     public void clickLogout(View view) {
         new DriverBeanDao(this).logoutDiver();
         refreshUserInfo();
+        MapActivity.isStarted = false;
     }
 
 }

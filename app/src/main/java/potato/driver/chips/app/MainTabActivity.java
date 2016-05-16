@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import potato.driver.R;
 import potato.driver.chips.base.BaseTabHostActivity;
-import potato.driver.ui.driver.MapActivity;
+import potato.driver.ui.map.MapActivity;
 import potato.driver.ui.me.MeActivity;
 
 public class MainTabActivity extends BaseTabHostActivity {
