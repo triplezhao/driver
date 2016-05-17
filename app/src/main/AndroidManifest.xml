@@ -87,6 +87,9 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
      
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    //地图包、搜索包需要的基础权限
+    //定位包、导航包需要的额外权限（注：基础权限也需要）
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <application
         android:name=".chips.app.MainApplication"
@@ -147,7 +150,9 @@
         <activity android:name=".ui.map.MapActivity"></activity>
 
         <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
-        <service android:name="com.amap.api.location.APSService"></service>
+        <service android:name="com.amap.api.location.APSService"
+            android:exported="true">
+        </service>
 
         <meta-data
             android:name="com.amap.api.v2.apikey"

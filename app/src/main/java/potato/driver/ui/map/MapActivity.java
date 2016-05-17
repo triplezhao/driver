@@ -9,10 +9,12 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps2d.AMap;
+import com.amap.api.maps2d.CameraUpdate;
 import com.amap.api.maps2d.CameraUpdateFactory;
 import com.amap.api.maps2d.LocationSource;
 import com.amap.api.maps2d.MapView;
 import com.amap.api.maps2d.model.BitmapDescriptorFactory;
+import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.MyLocationStyle;
 import com.potato.library.net.RequestManager;
 import com.potato.library.net.RequestWraper;
@@ -89,7 +91,8 @@ public class MapActivity extends BaseActivity implements LocationSource,
         aMap.setLocationSource(this);// 设置定位监听
         aMap.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
         aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
-        CameraUpdateFactory.zoomTo(15);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.zoomTo(15);
+        aMap.moveCamera(cameraUpdate);
         float mZoom = aMap.getCameraPosition().zoom;
         L.d("mZoom=" + mZoom);
         // aMap.setMyLocationType()
@@ -145,7 +148,12 @@ public class MapActivity extends BaseActivity implements LocationSource,
                 mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
                 String errText = "定位成功," + amapLocation.getLatitude() + "," + amapLocation.getLongitude();
                 L.d(errText);
-
+                /**
+                 * 调用animateCamera方法或moveCamera方法来改变可视区域
+                 */
+                CameraUpdate cameraUpdate = CameraUpdateFactory.changeLatLng(new LatLng(amapLocation.getLatitude(), amapLocation.getLongitude()));
+                aMap.animateCamera(cameraUpdate, 1000, null);
+                aMap.moveCamera(cameraUpdate);
                 if (isStarted) {
                     updateLocation(amapLocation);
                 }
